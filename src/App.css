@@ -1,0 +1,29 @@
+.board {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-content: space-evenly;
+	flex-direction: row;
+	gap: 1rem;
+	width: 90%;
+	margin: auto;
+	background: red;
+}
+
+.title {
+	margin: auto;
+	width: 20%;
+	text-align: center;
+}
+
+.category__header {
+	width: auto;
+	text-align: center;
+	padding-block: 2rem;
+}
+.category__header__text {
+	margin-top: 50%;
+}
+
+* {
+	outline: 1px solid black;
+}
