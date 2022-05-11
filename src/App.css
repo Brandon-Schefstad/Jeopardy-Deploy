@@ -21,15 +21,26 @@
 .category__header {
 	width: auto;
 	text-align: center;
-	padding-block: 2rem;
 	display: grid;
 	flex-direction: column;
 	gap: 2rem;
 	grid-template-rows: repeat(6, 1fr);
+	margin-inline: auto;
+	top: 0px;
+}
+.category__header__text {
+	height: 40px;
+	margin-block: auto;
 }
 .clues {
-	color: green;
+	background: rgb(201, 201, 236);
+	display: flex;
+	text-align: center;
 }
 * {
 	outline: 1px solid black;
+}
+.clues__text {
+	color: green;
+	margin: auto;
 }

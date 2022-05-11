@@ -1,11 +1,15 @@
 import React from 'react';
 
 const Clue = (props) => {
-	return props.data.map((x) => (
+	const clueArray = [];
+	for (let i = 0; i < 5; i++) {
+		clueArray.push(props.data[i]);
+	}
+	console.log(`CLUE ARRAY IS ${clueArray}`);
+	return clueArray.map((x) => (
 		<div className="clues">
-			<span>{x.question}</span>
+			<span className="clues__text">{x.question}</span>
 		</div>
 	));
 };
-
 export default Clue;
