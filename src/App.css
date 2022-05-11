@@ -1,12 +1,15 @@
 .board {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+
 	justify-content: space-evenly;
 	flex-direction: row;
 	gap: 1rem;
 	width: 90%;
 	margin: auto;
+	height: 800px;
 	background: red;
+	overflow-y: hidden;
 }
 
 .title {
@@ -19,11 +22,14 @@
 	width: auto;
 	text-align: center;
 	padding-block: 2rem;
+	display: grid;
+	flex-direction: column;
+	gap: 2rem;
+	grid-template-rows: repeat(6, 1fr);
 }
-.category__header__text {
-	margin-top: 50%;
+.clues {
+	color: green;
 }
-
 * {
 	outline: 1px solid black;
 }
