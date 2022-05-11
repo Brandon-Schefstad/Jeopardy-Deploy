@@ -3,6 +3,7 @@ import './App.css';
 import Title from './components/Title';
 import Category from './components/Category';
 import axios from 'axios';
+import CatArray from './components/CatArray';
 
 function App() {
 	const [category, setCategory] = useState([]);
@@ -27,6 +28,7 @@ function App() {
 			<div className="App">
 				<button onClick={goFetch}>Click Here</button>
 				<Title />
+
 				<div className="board">
 					<Category data={category} />
 				</div>

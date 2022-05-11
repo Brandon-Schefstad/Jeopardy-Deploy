@@ -4,9 +4,9 @@
 	justify-content: space-evenly;
 	flex-direction: row;
 	gap: 1rem;
-	width: 90%;
+	width: 95%;
 	margin: auto;
-	height: 800px;
+	height: 1000px;
 	background: #081380;
 	color: yellow;
 	overflow-y: hidden;
@@ -26,12 +26,11 @@
 	flex-direction: column;
 	gap: 2rem;
 	grid-template-rows: repeat(6, 1fr);
-	margin-inline: auto;
 	top: 0px;
 }
 .category__header__text {
 	height: 40px;
-	margin-block: auto;
+	margin-bottom: -40px;
 }
 .clues {
 	background: rgb(201, 201, 236);
@@ -44,4 +43,13 @@
 .clues__text {
 	color: green;
 	margin: auto;
+}
+.clueCard {
+	background-color: #52567b;
+	padding: 2.5rem;
+}
+.clueCard__text {
+	background-color: black;
+	color: white;
+	font-size: 1.2rem;
 }
