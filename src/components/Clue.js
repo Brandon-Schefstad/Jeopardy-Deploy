@@ -8,7 +8,9 @@ const Clue = (props) => {
 	console.log(`CLUE ARRAY IS ${clueArray}`);
 	return clueArray.map((x) => (
 		<div className="clues">
-			<span className="clues__text">{x.question}</span>
+			<span className="clues__text clues__text--answer">
+				{x.question}
+			</span>
 		</div>
 	));
 };

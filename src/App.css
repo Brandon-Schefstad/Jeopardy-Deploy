@@ -1,15 +1,16 @@
 .board {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-
 	justify-content: space-evenly;
 	flex-direction: row;
 	gap: 1rem;
 	width: 90%;
 	margin: auto;
 	height: 800px;
-	background: red;
+	background: #081380;
+	color: yellow;
 	overflow-y: hidden;
+	padding: 2rem;
 }
 
 .title {

@@ -5,6 +5,7 @@ import Clue from './Clue';
 
 const CategoryHeader = (props) => {
 	const [clue, setClue] = useState([]);
+	const [isLoading, setIsLoading] = useState([true]);
 	//Populate Data in Header
 	function fixHeaders() {
 		const title = props.data.title;
@@ -20,12 +21,16 @@ const CategoryHeader = (props) => {
 			.get(`http://jservice.io/api/clues?category=${props.data.id}`)
 			.then(function (response) {
 				setClue(response.data);
+				setIsLoading(false);
 			});
 	}
 	useEffect(() => {
 		goFetch();
 	}, []);
 
+	if (isLoading) {
+		return <h2>"Loading"</h2>;
+	}
 	return (
 		<div className="category__header">
 			<h2 className="category__header__text" key={fixHeaders()}>
