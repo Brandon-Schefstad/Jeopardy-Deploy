@@ -1,27 +1,32 @@
 import React from 'react';
 import { useState } from 'react';
+import LargeClue from './LargeClue';
 
 const ClueCard = (props) => {
-	const [side, setSide] = useState(['question']);
+	const [side, setSide] = useState(['value']);
 	function setSideFunction() {
-		if (side === 'question') {
-			setSide('answer');
-		} else if (side === 'answer') {
-			setSide('none');
+		if (side === 'front') {
+			setSide('value');
 		} else {
-			setSide('question');
+			setSide('front');
 		}
 	}
-	if (side === 'answer') {
+	if (side === 'front') {
 		return (
-			<div
-				className="clueCard"
-				key={props.data.id}
-				onClick={setSideFunction}
-			>
-				<span class="clueCard__text">{props.data.answer}</span>
+			<div className="clueCard" key={props.data.id}>
+				<LargeClue data={props.data} />
 			</div>
 		);
+		// } else if (side === 'back') {
+		// 	return (
+		// 		<div
+		// 			className="clueCard"
+		// 			key={props.data.id}
+		// 			onClick={setSideFunction}
+		// 		>
+		// 			<span class="clueCard__text back">{props.data.answer}</span>
+		// 		</div>
+		// 	);
 	} else {
 		return (
 			<div
@@ -29,21 +34,12 @@ const ClueCard = (props) => {
 				key={props.data.id}
 				onClick={setSideFunction}
 			>
-				<span class="clueCard__text">{props.data.question}</span>
+				<span className="clueCard__text value ">
+					{props.data.value}
+				</span>
 			</div>
 		);
 	}
-	// } else {
-	// 	return (
-	// 		<div
-	// 			className="clueCard"
-	// 			key={props.data.id}
-	// 			onClick={setSideFunction}
-	// 		>
-	// 			<span> </span>
-	// 		</div>
-	// 	);
-	// }
 };
 
 export default ClueCard;

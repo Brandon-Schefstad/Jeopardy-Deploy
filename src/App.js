@@ -4,7 +4,7 @@ import Title from './components/Title';
 import Category from './components/Category';
 import axios from 'axios';
 import CatArray from './components/CatArray';
-
+import Player from './components/Player';
 function App() {
 	const [category, setCategory] = useState([]);
 	const [isLoading, setIsLoading] = useState([true]);
@@ -29,8 +29,11 @@ function App() {
 				<button onClick={goFetch}>Click Here</button>
 				<Title />
 
-				<div className="board">
-					<Category data={category} />
+				<div className="gameboard">
+					<div className="board">
+						<Category data={category} />
+					</div>
+					<Player />
 				</div>
 			</div>
 		);
