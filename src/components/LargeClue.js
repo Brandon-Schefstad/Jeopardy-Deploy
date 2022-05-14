@@ -5,8 +5,6 @@ const LargeClue = (props) => {
 	function setSideFunction() {
 		if (side === true) {
 			setSide('answer');
-		} else if (side === 'answer') {
-			setSide(false);
 		} else {
 			setSide(true);
 		}
@@ -17,6 +15,7 @@ const LargeClue = (props) => {
 				key={props.data.id}
 				onClick={setSideFunction}
 				className="large-clue-container"
+				value={props.data.value}
 			>
 				<span className="large-clue">{props.data.question}</span>
 			</div>

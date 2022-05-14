@@ -3,7 +3,7 @@ import './App.css';
 import Title from './components/Title';
 import Category from './components/Category';
 import axios from 'axios';
-import Player from './components/Player';
+import PlayerContainer from './components/PlayerContainer';
 function App() {
 	// Category is passed onto child component as props
 	const [category, setCategory] = useState([]);
@@ -24,24 +24,24 @@ function App() {
 	}, []);
 
 	// function to create a column, passing in category as props from fetch request.
-	function createColumn() {
+	function createApp() {
 		return (
 			<div className="App">
 				<section className="wrapper">
-					<button onClick={goFetch}>Click Here</button>
-					<Title />
+					{/* <button onClick={goFetch}>Click Here</button> */}
+					{/* <Title /> */}
 					<div className="gameboard">
 						<div className="board">
 							<Category data={category} />
 						</div>
-						<Player />
+						<PlayerContainer loading={isLoad} />
 					</div>
 				</section>
 			</div>
 		);
 	}
 	// Ternary to update category or show "Loading"
-	return isLoad ? createColumn() : 'Loading';
+	return isLoad ? createApp() : 'Loading';
 }
 
 export default App;

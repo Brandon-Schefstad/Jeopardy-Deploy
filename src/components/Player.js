@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 
-const Player = () => {
-	let [score, setScore] = useState(0);
-	let [players, setPlayers] = useState(1);
-	// console.log(score);
-	// document.querySelectorAll('.value').addEventListener('click', setScore);
-	let array = [];
-
-	function addPlayer() {
-		// Set Max Player
-		players < 4 ? setPlayers(players + 1) : setPlayers(0);
-		console.log(players);
-	}
-	for (let i = 1; i <= players; i++) {
-		array.push(i);
-		console.log(array);
+const Player = ({ playerNumber }) => {
+	const [score, setScore] = useState(0);
+	function addScore() {
+		const value = document
+			.querySelector('.large-clue-container')
+			.getAttribute('value');
+		console.log(value);
+		setScore(score + parseInt(value));
+		document.querySelector('.large-clue-container').classList.add('hidden');
+		document
+			.querySelector('.large-clue-container')
+			.classList.remove('large-clue-container');
 	}
 	return (
-		<div class="player-container">
-			<button onClick={addPlayer}>+</button>
-			<span>Player {players}</span>
-			<span>Player Score is {score}</span>
+		<div onClick={addScore} className="player">
+			<span>Player {playerNumber}</span>
+			<span>Score: {score}</span>
 		</div>
 	);
 };

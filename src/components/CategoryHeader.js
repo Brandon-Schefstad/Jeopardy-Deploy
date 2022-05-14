@@ -33,9 +33,11 @@ const CategoryHeader = (props) => {
 	}
 	return (
 		<div className="category__header">
-			<h2 className="category__header__text" key={fixHeaders()}>
-				{fixHeaders()}
-			</h2>
+			<div className="category__header__title">
+				<h3 className="category__header__text" key={fixHeaders()}>
+					{fixHeaders()}
+				</h3>
+			</div>
 			<Clue data={clue} />
 		</div>
 	);
