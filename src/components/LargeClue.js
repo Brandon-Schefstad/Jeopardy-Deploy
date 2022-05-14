@@ -26,6 +26,7 @@ const LargeClue = (props) => {
 				onClick={setSideFunction}
 				key={props.data.id}
 				className="large-clue-container"
+				value={props.data.value}
 			>
 				<span className="large-clue">Answer? {props.data.answer}</span>
 			</div>

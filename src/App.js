@@ -20,7 +20,7 @@ function App() {
 	}
 	useEffect(() => {
 		goFetch();
-	});
+	}, []);
 
 	// function to create a column, passing in category as props from fetch request.
 	function createApp() {
