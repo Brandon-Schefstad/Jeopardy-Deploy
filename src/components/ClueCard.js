@@ -3,38 +3,25 @@ import { useState } from 'react';
 import LargeClue from './LargeClue';
 
 const ClueCard = (props) => {
-	const [side, setSide] = useState(['value']);
+	// ClueCard has two sides, value and null
+	const [side, setSide] = useState(false);
+	const [clue, setClue] = useState([]);
 	function setSideFunction() {
-		if (side === 'front') {
-			setSide('value');
-		} else {
-			setSide('front');
-		}
+		side ? setSide(false) : setSide(true);
+		setClue(props.data);
 	}
-	if (side === 'front') {
+	if (side) {
+		// Displays clue in large format, passes on props
 		return (
-			<div className="clueCard" key={props.data.id}>
-				<LargeClue data={props.data} />
+			<div className="clueCard" key={clue.id}>
+				<LargeClue data={clue} />
 			</div>
 		);
-		// } else if (side === 'back') {
-		// 	return (
-		// 		<div
-		// 			className="clueCard"
-		// 			key={props.data.id}
-		// 			onClick={setSideFunction}
-		// 		>
-		// 			<span class="clueCard__text back">{props.data.answer}</span>
-		// 		</div>
-		// 	);
 	} else {
 		return (
-			<div
-				className="clueCard"
-				key={props.data.id}
-				onClick={setSideFunction}
-			>
+			<div className="clueCard" key={clue.id} onClick={setSideFunction}>
 				<span className="clueCard__text value ">
+					{/* Uses props.data because it displays before setClue on line 11 */}
 					{props.data.value}
 				</span>
 			</div>

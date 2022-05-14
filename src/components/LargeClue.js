@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 
 const LargeClue = (props) => {
-	const [side, setSide] = useState('front');
+	const [side, setSide] = useState(true);
 	function setSideFunction() {
-		if (side === 'front') {
+		if (side === true) {
 			setSide('answer');
-			// } else if (side === 'back') {
-			// 	setSide('value');
 		} else if (side === 'answer') {
-			setSide('close');
+			setSide(false);
 		} else {
-			setSide('front');
+			setSide(true);
 		}
 	}
-	if (side === 'front') {
+	if (side === true) {
 		return (
 			<div
 				key={props.data.id}
