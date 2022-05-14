@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Title from './components/Title';
 import Category from './components/Category';
 import axios from 'axios';
 import PlayerContainer from './components/PlayerContainer';
@@ -21,7 +20,7 @@ function App() {
 	}
 	useEffect(() => {
 		goFetch();
-	}, []);
+	});
 
 	// function to create a column, passing in category as props from fetch request.
 	function createApp() {

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Player from './Player';
 
 const PlayerContainer = ({ isLoad }) => {
-	let [score, setScore] = useState(0);
 	let [players, setPlayers] = useState(1);
 	let array = [];
 	// Adds numbers up to 4.
