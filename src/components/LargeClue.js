@@ -32,7 +32,7 @@ const LargeClue = (props) => {
 			</div>
 		);
 	} else {
-		return <div></div>;
+		return null;
 	}
 };
 

@@ -27,14 +27,16 @@ function App() {
 	function createColumn() {
 		return (
 			<div className="App">
-				<button onClick={goFetch}>Click Here</button>
-				<Title />
-				<div className="gameboard">
-					<div className="board">
-						<Category data={category} />
+				<section className="wrapper">
+					<button onClick={goFetch}>Click Here</button>
+					<Title />
+					<div className="gameboard">
+						<div className="board">
+							<Category data={category} />
+						</div>
+						<Player />
 					</div>
-					<Player />
-				</div>
+				</section>
 			</div>
 		);
 	}

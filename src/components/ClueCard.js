@@ -10,14 +10,18 @@ const ClueCard = (props) => {
 		side ? setSide(false) : setSide(true);
 		setClue(props.data);
 	}
-	if (side) {
-		// Displays clue in large format, passes on props
+	function makeLargeClueCard() {
 		return (
-			<div className="clueCard" key={clue.id}>
+			<div
+				style={{ backgroundColor: 'green' }}
+				className="clueCard seen"
+				key={clue.id}
+			>
 				<LargeClue data={clue} />
 			</div>
 		);
-	} else {
+	}
+	function showValue() {
 		return (
 			<div className="clueCard" key={clue.id} onClick={setSideFunction}>
 				<span className="clueCard__text value ">
@@ -27,6 +31,7 @@ const ClueCard = (props) => {
 			</div>
 		);
 	}
+	return side ? makeLargeClueCard() : showValue();
 };
 
 export default ClueCard;
