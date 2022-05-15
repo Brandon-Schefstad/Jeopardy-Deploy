@@ -16,10 +16,12 @@ const CategoryHeader = (props) => {
 		const titleHeader = words.join(' ');
 		return titleHeader;
 	}
+
 	async function goFetch() {
 		axios
-			.get(`http://jservice.io/api/clues?category=${props.data.id}`)
+			.get(`https://jservice.io/api/clues?category=${props.data.id}`)
 			.then(function (response) {
+				console.log(response.data);
 				setClue(response.data);
 				setIsLoading(false);
 			});

@@ -14,8 +14,8 @@ function App() {
 			.get('https://jservice.io/api/categories?count=5')
 			.then(function (response) {
 				setCategory(response.data);
-				console.log(response.data);
 			});
+
 		setIsLoad(true);
 	}
 	useEffect(() => {

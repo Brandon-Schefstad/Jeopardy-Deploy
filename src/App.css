@@ -74,15 +74,22 @@ select {
 	}
 }
 
+/* Custom */
+body {
+	background-color: black;
+}
 .gameboard {
 	display: flex;
 	flex-direction: row;
 }
 .wrapper {
-	width: 100%;
+	width: 95%;
+	margin: auto;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
-	padding: 1rem;
+	padding: 0.5rem;
+	background-color: #081484;
 }
 .board {
 	display: grid;
@@ -117,9 +124,11 @@ select {
 	box-shadow: 4px 4px 4px #081380;
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	margin: auto;
+	width: 100%;
+	min-width: 200px;
+	max-width: 400px;
 	margin-top: 5rem;
+	margin-inline: auto;
 	font-size: 2rem;
 }
 .title {
@@ -138,7 +147,6 @@ select {
 	top: 0px;
 }
 .category__header__title {
-	background-color: red;
 	height: 70%;
 	margin-block: auto;
 }
@@ -167,18 +175,19 @@ select {
 .large-clue-container {
 	z-index: 3;
 	width: 100%;
-	height: 60%;
+	height: 100%;
 	position: absolute;
 	left: 0%;
-	top: 20%;
+	top: 13%;
 	background-color: #52567b;
 	display: flex;
 	justify-content: center;
 	font-size: 2rem;
 }
 .large-clue {
-	color: white;
-	margin-block: auto;
+	color: yellow;
+	margin-top: 20%;
+	font-size: 2.5rem;
 }
 div.seen {
 	color: green !important;

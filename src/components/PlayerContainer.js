@@ -17,7 +17,6 @@ const PlayerContainer = ({ isLoad }) => {
 		let playerArray = array.map((x) => (
 			<Player score={0} key={x} playerNumber={x} />
 		));
-		console.log(playerArray);
 		return playerArray;
 	}
 

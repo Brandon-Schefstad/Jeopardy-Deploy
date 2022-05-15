@@ -38,6 +38,8 @@
     ]
   },
   "devDependencies": {
-    "netlify-cli": "^10.3.1"
+    "css-declaration-sorter": "^6.2.2",
+    "netlify-cli": "^10.3.1",
+    "postcss": "^8.4.13"
   }
 }
