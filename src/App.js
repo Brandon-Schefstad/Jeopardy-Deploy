@@ -11,23 +11,30 @@ function App() {
 	// Gets fetch
 	async function goFetch() {
 		axios
-			.get('https://jservice.io/api/categories?count=5')
+			.get('https://jservice.io/api/categories?count=100')
 			.then(function (response) {
-				setCategory(response.data);
+				const catArray = response.data;
+				let returnArray = [];
+				for (let i = 0; i <= 4; i++) {
+					const index = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+					returnArray.push(catArray[index]);
+					console.log(returnArray);
+				}
+				setCategory(returnArray);
 			});
 
 		setIsLoad(true);
 	}
-	useEffect(() => {
-		goFetch();
-	}, []);
+	// useEffect(() => {
+	// 	goFetch();
+	// }, []);
 
 	// function to create a column, passing in category as props from fetch request.
 	function createApp() {
 		return (
 			<div className="App">
 				<section className="wrapper">
-					{/* <button onClick={goFetch}>Click Here</button> */}
+					<button onClick={goFetch}>Click Here</button>
 					{/* <Title /> */}
 					<div className="gameboard">
 						<div className="board">
