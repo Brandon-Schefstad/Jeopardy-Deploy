@@ -25,17 +25,11 @@ function App() {
 
 		setIsLoad(true);
 	}
-	// useEffect(() => {
-	// 	goFetch();
-	// }, []);
-
-	// function to create a column, passing in category as props from fetch request.
 	function createApp() {
 		return (
 			<div className="App">
 				<section className="wrapper">
-					<button onClick={goFetch}>Click Here</button>
-					{/* <Title /> */}
+					<button onClick={goFetch}>Create Board</button>
 					<div className="gameboard">
 						<div className="board">
 							<Category data={category} />
