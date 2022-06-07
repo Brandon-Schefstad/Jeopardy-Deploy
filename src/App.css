@@ -179,10 +179,14 @@ body {
 	position: absolute;
 	left: 0%;
 	top: 13%;
+	padding: 5rem;
 	background-color: #52567b;
-	display: flex;
 	justify-content: center;
 	font-size: 2rem;
+	display: grid;
+	grid-template-rows: 0.5fr 1fr 1fr;
+
+	align-items: center;
 }
 .large-clue {
 	color: yellow;
@@ -195,4 +199,10 @@ div.seen {
 
 .hidden {
 	display: none;
+}
+.close__button {
+	color: red;
+	font-size: 2rem;
+	padding: 2rem;
+	border-radius: 2rem;
 }

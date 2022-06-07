@@ -25,11 +25,14 @@ function App() {
 
 		setIsLoad(true);
 	}
+
+	useEffect(() => {
+		goFetch();
+	}, []);
 	function createApp() {
 		return (
 			<div className="App">
 				<section className="wrapper">
-					<button onClick={goFetch}>Create Board</button>
 					<div className="gameboard">
 						<div className="board">
 							<Category data={category} />
