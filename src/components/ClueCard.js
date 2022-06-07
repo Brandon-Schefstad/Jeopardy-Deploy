@@ -4,12 +4,13 @@ import LargeClue from './LargeClue';
 
 const ClueCard = (props) => {
 	// ClueCard has two sides, value and null
-	const [side, setSide] = useState(0);
+	const [side, setSide] = useState(false);
 	const [clue, setClue] = useState([]);
 	// function setSideFunction() {
 	// 	side ? setSide(false) : setSide(true);
 	// 	setClue(props.data);
 	// }
+
 	function setSideFunction() {
 		if (side) {
 			setSide(0);

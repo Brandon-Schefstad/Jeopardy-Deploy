@@ -6,9 +6,6 @@ const LargeClue = (props) => {
 		if (side) {
 			setSide('answer');
 			console.log('side!');
-		} else {
-			setSide(false);
-			console.log('false!');
 		}
 	}
 	function closeClue() {
@@ -22,15 +19,10 @@ const LargeClue = (props) => {
 		return (
 			<div
 				key={props.data.id}
-				onClick={() => setSide('finished')}
+				onClick={() => setSide('answer')}
 				className="large-clue-container"
 				value={props.data.value}
 			>
-				<div>
-					<button className="close__button" onClick={closeClue}>
-						Close
-					</button>
-				</div>
 				<span className="large-clue">
 					{props.data.question}
 					<br></br>
@@ -42,16 +34,22 @@ const LargeClue = (props) => {
 	} else if (side === 'answer') {
 		return (
 			<div
-				onClick={setSideFunction}
+				onClick={() => setSide('finished')}
 				key={props.data.id}
 				className="large-clue-container"
 				value={props.data.value}
 			>
+				<button
+					className="close__button"
+					onClick={() => setSide('finished')}
+				>
+					Close
+				</button>
 				<span className="large-clue">Answer? {props.data.answer}</span>
 			</div>
 		);
 	} else if (side === 'finished') {
-		return <div></div>;
+		return <div>Finished</div>;
 	}
 };
 
